@@ -12,7 +12,9 @@
   <meta property="og:title" content="Ihtisham ul Haq — Software Engineer & Full-Stack Developer" />
   <meta property="og:description" content="Building reliable backends and clean web experiences with Node.js, TypeScript, and modern tooling." />
   <meta property="og:url" content="https://imihtisham.dev" />
+  <meta property="og:image" content="https://imihtisham.dev/profile.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://imihtisham.dev/profile.png" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230b0c10%22/><text x=%2250%22 y=%2268%22 font-size=%2256%22 font-family=%22monospace%22 fill=%22%2364ffda%22 text-anchor=%22middle%22>i</text></svg>" />
 
@@ -100,7 +102,33 @@
 
     /* ---------- Hero ---------- */
     section { padding: 96px 0; }
-    .hero { padding: 120px 0 80px; }
+    .hero {
+      padding: 110px 0 80px;
+      display: flex;
+      align-items: center;
+      gap: 56px;
+    }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 0 6px var(--accent-dim), 0 20px 50px rgba(0,0,0,0.5);
+    }
+    @media (max-width: 720px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 36px;
+        padding-top: 90px;
+      }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero .btn-row { justify-content: center; }
+      .hero-photo { width: 180px; height: 180px; }
+    }
     .hero .eyebrow {
       color: var(--accent);
       font-family: monospace;
@@ -282,18 +310,21 @@
 
     <!-- HERO -->
     <section class="hero" id="top">
-      <p class="eyebrow">Hi, my name is</p>
-      <h1>Ihtisham ul Haq.</h1>
-      <h2>I build software, end to end.</h2>
-      <p>
-        I'm a Software Engineer and Full-Stack Developer who enjoys turning ideas into
-        reliable, well-crafted products — from scalable Node.js backends to clean,
-        responsive user interfaces.
-      </p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#projects">View my work</a>
-        <a class="btn btn-ghost" href="mailto:uihtisham0@gmail.com">Get in touch</a>
+      <div class="hero-text">
+        <p class="eyebrow">Hi, my name is</p>
+        <h1>Ihtisham ul Haq.</h1>
+        <h2>I build software, end to end.</h2>
+        <p>
+          I'm a Software Engineer and Full-Stack Developer who enjoys turning ideas into
+          reliable, well-crafted products — from scalable Node.js backends to clean,
+          responsive user interfaces.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#projects">View my work</a>
+          <a class="btn btn-ghost" href="mailto:uihtisham0@gmail.com">Get in touch</a>
+        </div>
       </div>
+      <img class="hero-photo" src="profile.png" alt="Ihtisham ul Haq" width="260" height="260" />
     </section>
 
     <!-- ABOUT -->
