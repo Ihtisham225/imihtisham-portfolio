@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ihtisham ul Haq — Software Engineer & Full-Stack Developer</title>
+  <meta name="description" content="Ihtisham ul Haq — Software Engineer and Full-Stack Developer building reliable backends and clean web experiences with Node.js, TypeScript, and modern tooling." />
+  <meta name="author" content="Ihtisham ul Haq" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ihtisham ul Haq — Software Engineer & Full-Stack Developer" />
+  <meta property="og:description" content="Building reliable backends and clean web experiences with Node.js, TypeScript, and modern tooling." />
+  <meta property="og:url" content="https://imihtisham.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230b0c10%22/><text x=%2250%22 y=%2268%22 font-size=%2256%22 font-family=%22monospace%22 fill=%22%2364ffda%22 text-anchor=%22middle%22>i</text></svg>" />
+
+  <style>
+    :root {
+      --bg: #0a0b0e;
+      --bg-soft: #111318;
+      --card: #14161c;
+      --border: #23262f;
+      --text: #e6e8ee;
+      --muted: #9aa1ad;
+      --accent: #64ffda;
+      --accent-dim: rgba(100, 255, 218, 0.12);
+      --max: 920px;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* subtle ambient glow */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, var(--accent-dim) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(10, 11, 14, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    @media (max-width: 600px) { .nav-links { display: none; } }
+
+    /* ---------- Hero ---------- */
+    section { padding: 96px 0; }
+    .hero { padding: 120px 0 80px; }
+    .hero .eyebrow {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .hero h2 {
+      font-size: clamp(1.4rem, 4vw, 2.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+    .hero p {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 36px;
+    }
+    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #07120f;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ---------- Section heading ---------- */
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .sec-head .num {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 1rem;
+    }
+    .sec-head h3 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .sec-head .line {
+      height: 1px;
+      width: 100%;
+      background: var(--border);
+    }
+
+    /* ---------- About ---------- */
+    .about p { color: var(--muted); font-size: 1.05rem; margin-bottom: 16px; max-width: 680px; }
+    .about strong { color: var(--text); }
+
+    /* ---------- Skills ---------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 14px;
+    }
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    }
+    .skill:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+    .skill b { color: var(--accent); font-family: monospace; margin-right: 8px; }
+
+    /* ---------- Projects ---------- */
+    .projects { display: grid; gap: 22px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      transition: border-color 0.2s ease, transform 0.15s ease;
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .card .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card h4 { font-size: 1.25rem; letter-spacing: -0.01em; }
+    .card .links { display: flex; gap: 14px; }
+    .card .links a { color: var(--muted); font-size: 0.85rem; }
+    .card .links a:hover { color: var(--accent); }
+    .card p { color: var(--muted); margin-bottom: 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact { text-align: center; padding-bottom: 60px; }
+    .contact .num { display: block; color: var(--accent); font-family: monospace; margin-bottom: 12px; }
+    .contact h3 { font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.02em; margin-bottom: 18px; }
+    .contact p { color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
+
+    /* ---------- Footer / socials ---------- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+    }
+    .socials { display: flex; justify-content: center; gap: 24px; margin-bottom: 18px; }
+    .socials a {
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.15s ease;
+      display: inline-flex;
+    }
+    .socials a:hover { color: var(--accent); transform: translateY(-2px); }
+    footer small { color: var(--muted); font-size: 0.82rem; }
+
+    /* ---------- Reveal animation ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">i<span>m</span>ihtisham</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <p class="eyebrow">Hi, my name is</p>
+      <h1>Ihtisham ul Haq.</h1>
+      <h2>I build software, end to end.</h2>
+      <p>
+        I'm a Software Engineer and Full-Stack Developer who enjoys turning ideas into
+        reliable, well-crafted products — from scalable Node.js backends to clean,
+        responsive user interfaces.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#projects">View my work</a>
+        <a class="btn btn-ghost" href="mailto:uihtisham0@gmail.com">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about reveal">
+      <div class="sec-head">
+        <span class="num">01.</span>
+        <h3>About me</h3>
+        <span class="line"></span>
+      </div>
+      <p>
+        I'm a developer focused on building things that work well and last. Most of my
+        day-to-day revolves around designing <strong>APIs and backend services</strong>,
+        modeling data, and shipping features that hold up in production — while also
+        being comfortable on the frontend to deliver complete, polished experiences.
+      </p>
+      <p>
+        I care about clean code, sensible architecture, and the small details that make
+        software feel reliable. I'm always learning, and I like working on problems where
+        I get to own a feature from the database all the way to the screen.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <div class="sec-head">
+        <span class="num">02.</span>
+        <h3>Skills &amp; Tech</h3>
+        <span class="line"></span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill"><b>▹</b>JavaScript</div>
+        <div class="skill"><b>▹</b>TypeScript</div>
+        <div class="skill"><b>▹</b>Node.js</div>
+        <div class="skill"><b>▹</b>Express</div>
+        <div class="skill"><b>▹</b>React</div>
+        <div class="skill"><b>▹</b>Next.js</div>
+        <div class="skill"><b>▹</b>PostgreSQL</div>
+        <div class="skill"><b>▹</b>Prisma</div>
+        <div class="skill"><b>▹</b>REST APIs</div>
+        <div class="skill"><b>▹</b>Redis</div>
+        <div class="skill"><b>▹</b>Docker</div>
+        <div class="skill"><b>▹</b>Git</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <div class="sec-head">
+        <span class="num">03.</span>
+        <h3>Projects</h3>
+        <span class="line"></span>
+      </div>
+      <div class="projects">
+
+        <article class="card">
+          <div class="top">
+            <h4>Counssel</h4>
+            <div class="links">
+              <a href="#" target="_blank" rel="noopener">Live ↗</a>
+              <a href="#" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+          <p>
+            A legal-tech platform connecting people with law firms and legal professionals.
+            I work across the backend — APIs, subscriptions, discussions, and firm
+            management — powering both web and mobile clients.
+          </p>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Prisma</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="top">
+            <h4>Project Two</h4>
+            <div class="links">
+              <a href="#" target="_blank" rel="noopener">Live ↗</a>
+              <a href="#" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+          <p>
+            Short description of another project you're proud of. Explain what it does,
+            the problem it solves, and your role. Replace this card with your own work.
+          </p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">REST API</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="top">
+            <h4>Project Three</h4>
+            <div class="links">
+              <a href="#" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+          <p>
+            Another highlight — a side project, an open-source contribution, or something
+            you built to learn a new tool. Swap in real details and links.
+          </p>
+          <div class="tags">
+            <span class="tag">Express</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact reveal">
+      <span class="num">04. What's next?</span>
+      <h3>Get In Touch</h3>
+      <p>
+        I'm open to new opportunities and interesting projects. Whether you have a
+        question or just want to say hi, my inbox is always open — I'll get back to you!
+      </p>
+      <a class="btn btn-primary" href="mailto:uihtisham0@gmail.com">Say hello</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="socials">
+        <a href="https://github.com/Ihtisham225" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/ihtisham-ul-haq" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .77 0 1.73v20.54C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:uihtisham0@gmail.com" aria-label="Email">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 13.5L0 6V4.5l12 7.5 12-7.5V6l-12 7.5zM0 8.3l12 7.5 12-7.5V18a1.5 1.5 0 01-1.5 1.5h-21A1.5 1.5 0 010 18V8.3z"/></svg>
+        </a>
+      </div>
+      <small>Designed &amp; built by Ihtisham ul Haq · <a href="https://imihtisham.dev" style="color:var(--accent)">imihtisham.dev</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal-on-scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+  </script>
+</body>
+</html>
