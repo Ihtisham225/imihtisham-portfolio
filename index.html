@@ -258,6 +258,43 @@
       border-radius: 999px;
     }
 
+    /* ---------- Experience / Education timeline ---------- */
+    .timeline { position: relative; }
+    .entry {
+      position: relative;
+      padding: 0 0 30px 30px;
+      border-left: 1px solid var(--border);
+    }
+    .entry:last-child { border-left-color: transparent; padding-bottom: 0; }
+    .entry::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 4px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+    .entry .e-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .entry h4 { font-size: 1.12rem; letter-spacing: -0.01em; }
+    .entry .e-date {
+      font-family: monospace;
+      font-size: 0.82rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .entry .e-meta { color: var(--text); font-size: 0.95rem; margin-top: 2px; }
+    .entry .e-sub { color: var(--muted); font-size: 0.85rem; margin-top: 1px; }
+    .entry p { color: var(--muted); font-size: 0.92rem; margin-top: 8px; max-width: 640px; }
+
     /* ---------- Contact ---------- */
     .contact { text-align: center; padding-bottom: 60px; }
     .contact .num { display: block; color: var(--accent); font-family: monospace; margin-bottom: 12px; }
@@ -336,10 +373,118 @@
       </p>
     </section>
 
+    <!-- EXPERIENCE -->
+    <section id="experience" class="reveal">
+      <div class="sec-head">
+        <span class="num">02.</span>
+        <h3>Experience</h3>
+        <span class="line"></span>
+      </div>
+      <div class="timeline">
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>Founder &amp; CEO</h4>
+            <span class="e-date">Mar 2025 – Present</span>
+          </div>
+          <div class="e-meta">Tech Town Swat · Full-time</div>
+          <div class="e-sub">Mingora, Khyber Pakhtunkhwa, Pakistan · On-site</div>
+          <p>Software development services along with software and OS installation (Windows, macOS, Linux) and Windows driver setup.</p>
+        </div>
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>IT Manager</h4>
+            <span class="e-date">Aug 2024 – Present</span>
+          </div>
+          <div class="e-meta">Infotechkw · Part-time</div>
+          <div class="e-sub">Kuwait · Remote</div>
+          <p>Website management, hosting, domains and DNS.</p>
+        </div>
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>Laravel Developer</h4>
+            <span class="e-date">Sep 2022 – Present</span>
+          </div>
+          <div class="e-meta">Freelance · Self-employed</div>
+          <div class="e-sub">Mingora, Khyber Pakhtunkhwa, Pakistan</div>
+          <p>Building and maintaining Laravel applications — databases, SQL and backend APIs.</p>
+        </div>
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>IT Manager</h4>
+            <span class="e-date">Feb 2025 – May 2026</span>
+          </div>
+          <div class="e-meta">NR United · Full-time</div>
+          <div class="e-sub">Kuwait · Remote</div>
+          <p>Full-time Laravel developer — API and backend development.</p>
+        </div>
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>Laravel Developer</h4>
+            <span class="e-date">Mar 2025 – Jan 2026</span>
+          </div>
+          <div class="e-meta">Portfolyio.com · Full-time</div>
+          <div class="e-sub">Swat District, Khyber Pakhtunkhwa, Pakistan · Remote</div>
+          <p>Handled the database, APIs and VPS hosting for the platform.</p>
+        </div>
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>Development Team Lead</h4>
+            <span class="e-date">Sep 2023 – Mar 2025</span>
+          </div>
+          <div class="e-meta">Suvastu Tech · Full-time</div>
+          <div class="e-sub">Mingora, Khyber Pakhtunkhwa, Pakistan · On-site</div>
+          <p>Led development across SQL, databases and backend systems.</p>
+        </div>
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>Development Team Lead</h4>
+            <span class="e-date">Mar 2022 – Aug 2022</span>
+          </div>
+          <div class="e-meta">TrellisGraphics · Part-time</div>
+          <div class="e-sub">Mingora, Khyber Pakhtunkhwa, Pakistan</div>
+        </div>
+
+        <div class="entry">
+          <div class="e-head">
+            <h4>Laravel Developer</h4>
+            <span class="e-date">Jan 2020 – Feb 2022</span>
+          </div>
+          <div class="e-meta">Nextleadz · Full-time</div>
+          <div class="e-sub">Mingora, Khyber Pakhtunkhwa, Pakistan</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="reveal">
+      <div class="sec-head">
+        <span class="num">03.</span>
+        <h3>Education</h3>
+        <span class="line"></span>
+      </div>
+      <div class="timeline">
+        <div class="entry">
+          <div class="e-head">
+            <h4>University of Malakand, Pakistan</h4>
+            <span class="e-date">2018 – 2022</span>
+          </div>
+          <div class="e-meta">Bachelor of Science (BS), Computer Science</div>
+        </div>
+      </div>
+    </section>
+
     <!-- SKILLS -->
     <section id="skills" class="reveal">
       <div class="sec-head">
-        <span class="num">02.</span>
+        <span class="num">04.</span>
         <h3>Skills &amp; Tech</h3>
         <span class="line"></span>
       </div>
@@ -365,7 +510,7 @@
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
       <div class="sec-head">
-        <span class="num">03.</span>
+        <span class="num">05.</span>
         <h3>Projects</h3>
         <span class="line"></span>
       </div>
@@ -468,7 +613,7 @@
 
     <!-- CONTACT -->
     <section id="contact" class="contact reveal">
-      <span class="num">04. What's next?</span>
+      <span class="num">06. What's next?</span>
       <h3>Get In Touch</h3>
       <p>
         I'm open to new opportunities and interesting projects. Whether you have a
