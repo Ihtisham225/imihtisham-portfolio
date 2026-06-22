@@ -4,11 +4,8 @@ Personal portfolio — a single static `index.html` (no build step). Hosted on C
 
 ## Edit
 
-Everything lives in [`index.html`](index.html). Update the placeholder content:
-
-- **Projects** — the 2nd and 3rd cards are placeholders; replace with real projects and links.
-- **Project links** — the `href="#"` on the Counssel card (Live / Code) need real URLs.
-- **LinkedIn** — verify the URL in the footer (`linkedin.com/in/ihtisham-ul-haq`) points to your actual profile.
+Everything lives in [`index.html`](index.html) — bio, skills grid, and project cards are
+all plain HTML. Add a `Code ↗` link to any project card if you want to link a repo.
 
 ## Local preview
 
